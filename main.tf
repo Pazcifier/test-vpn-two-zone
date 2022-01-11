@@ -66,7 +66,7 @@ resource "ibm_is_instance" "instance1" {
 
 resource "ibm_is_floating_ip" "floatingip1" {
   name   = "fip-region-1"
-  target = "${ibm_is_instance.instance1.primary_network_interface.0.id}"
+  target = ibm_is_instance.instance1.primary_network_interface.0.id
 }
 
 resource "ibm_is_security_group_rule" "sg1_tcp_rule" {
