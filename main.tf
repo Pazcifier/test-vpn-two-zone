@@ -138,7 +138,7 @@ resource "ibm_is_ike_policy" "example" {
 
 resource "ibm_is_vpn_gateway" "VPNGateway2" {
   name   = "vpn-region-2"
-  subnet = "${ibm_is_subnet.subnet2.id}"
+  subnet = ibm_is_subnet.subnet2.id
 }
 
 resource "ibm_is_vpn_gateway_connection" "VPNGatewayConnection2" {
